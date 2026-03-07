@@ -67,9 +67,11 @@ export function Header() {
           </NavigationMenu>
         </div>
         <div className="flex">
+          <Link href="/login">
           <Button variant="outline" size="lg" className="cursor-pointer">
             Login
           </Button>
+          </Link>
         </div>
       </div>
     </header>
