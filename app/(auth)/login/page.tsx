@@ -5,11 +5,25 @@ import { Field, FieldLabel } from "@/components/ui/field";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Recycle } from "lucide-react";
+import { Recycle, LogOut } from "lucide-react";
 
 export default function Login() {
   return (
     <div className="container relative min-h-svh flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+      {/* Exit button */}
+      <Link
+        href="/"
+        className="absolute right-4 top-4 md:right-8 md:top-8 z-50"
+      >
+        <Button
+          variant="ghost"
+          size="icon-sm"
+          className="text-muted-foreground cursor-pointer"
+        >
+          <LogOut className="h-5 w-5" />
+        </Button>
+      </Link>
+
       {/* Left panel */}
       <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex overflow-hidden">
         <Image
