@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { Recycle } from "lucide-react";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,7 +16,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="flex h-16 w-full items-center justify-between px-14">
-        <div className="font-bold text-xl">RecycleBin</div>
+        <div className="font-bold text-xl flex"><Recycle className="mr-2 h-6 w-6" />RecycleBin</div>
         <div className="flex text-base font-medium">
           <NavigationMenu>
             <NavigationMenuList>
