@@ -58,11 +58,11 @@ export function Header() {
                 <NavigationMenuTrigger>Denuncia</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="w-96">
-                    <ListItem href="/" title="Realizar solicitação de Denuncia">
+                    <ListItem href="/denuncia" title="Realizar solicitação de Denuncia">
                       Relate irregularidades ambientais como descarte inadequado
                       de lixo, acúmulo de resíduos ou infrações.
                     </ListItem>
-                    <ListItem href="/" title="Visualizar/Editar Denuncia">
+                    <ListItem href="/denuncia/visualizar" title="Visualizar/Editar Denuncia">
                       Acompanhe o status das suas denúncias anteriores e faça
                       atualizações quando necessário.
                     </ListItem>
