@@ -16,7 +16,10 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="flex h-16 w-full items-center justify-between px-14">
-        <div className="font-bold text-xl flex"><Recycle className="mr-2 h-6 w-6" />RecycleBin</div>
+        <div className="font-bold text-xl flex">
+          <Recycle className="mr-2 h-6 w-6" />
+          RecycleBin
+        </div>
         <div className="flex text-base font-medium">
           <NavigationMenu>
             <NavigationMenuList>
@@ -26,25 +29,42 @@ export function Header() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href="/">Instruções</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href="/">Pontos de Coleta</Link>
-                </NavigationMenuLink>
+                <NavigationMenuTrigger>Instruções</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="w-96">
+                    <ListItem
+                      href="/"
+                      title="Coleta comum (Lixo orgânico / Rejeitos)"
+                    >
+                      Aprenda as melhores práticas para descarte de lixo
+                      orgânico e rejeitos não recicláveis de forma adequada.
+                    </ListItem>
+                    <ListItem href="/" title="Coleta seletiva (Recicláveis)">
+                      Entenda como separar e descartar materiais recicláveis
+                      (papel, plástico, vidro e metal) corretamente.
+                    </ListItem>
+                    <ListItem
+                      href="/"
+                      title="Coleta agendada (Resíduos volumosos)"
+                    >
+                      Solicite a remoção de itens grandes como móveis,
+                      eletrodomésticos através da
+                      coleta agendada.
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Denuncia</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="w-96">
                     <ListItem href="/" title="Realizar solicitação de Denuncia">
-                      Acessar o registro de denuncia de má conduta.
+                      Relate irregularidades ambientais como descarte inadequado
+                      de lixo, acúmulo de resíduos ou infrações.
                     </ListItem>
                     <ListItem href="/" title="Visualizar/Editar Denuncia">
-                      Acessar a visualização ou edição de denuncias realizadas
-                      por você.
+                      Acompanhe o status das suas denúncias anteriores e faça
+                      atualizações quando necessário.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -54,23 +74,29 @@ export function Header() {
                 <NavigationMenuContent>
                   <ul className="w-96">
                     <ListItem href="/" title="Realizar solicitação de Coleta">
-                      Acessar o registro de coleta de materiais.
+                      Agende a coleta de materiais especiais ou volumosos
+                      diretamente na sua residência ou empresa.
                     </ListItem>
                     <ListItem href="/" title="Visualizar/Editar Coleta">
-                      Acessar a visualização ou edição de solicitações de
-                      coletas realizadas por você.
+                      Gerencie suas solicitações ativas, visualize o histórico e
+                      atualize informações das coletas agendadas.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link href="/">Pontos de Coleta</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
         <div className="flex">
           <Link href="/login">
-          <Button variant="outline" size="lg" className="cursor-pointer">
-            Login
-          </Button>
+            <Button variant="outline" size="lg" className="cursor-pointer">
+              Login
+            </Button>
           </Link>
         </div>
       </div>
