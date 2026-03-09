@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 import { Recycle } from "lucide-react";
@@ -48,8 +50,7 @@ export function Header() {
                       title="Coleta agendada (Resíduos volumosos)"
                     >
                       Solicite a remoção de itens grandes como móveis,
-                      eletrodomésticos através da
-                      coleta agendada.
+                      eletrodomésticos através da coleta agendada.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -58,11 +59,17 @@ export function Header() {
                 <NavigationMenuTrigger>Denuncia</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="w-96">
-                    <ListItem href="/denuncia" title="Realizar solicitação de Denuncia">
+                    <ListItem
+                      href="/denuncia"
+                      title="Realizar solicitação de Denuncia"
+                    >
                       Relate irregularidades ambientais como descarte inadequado
                       de lixo, acúmulo de resíduos ou infrações.
                     </ListItem>
-                    <ListItem href="/denuncia/visualizar" title="Visualizar/Editar Denuncia">
+                    <ListItem
+                      href="/denuncia/visualizar"
+                      title="Visualizar/Editar Denuncia"
+                    >
                       Acompanhe o status das suas denúncias anteriores e faça
                       atualizações quando necessário.
                     </ListItem>
@@ -73,11 +80,17 @@ export function Header() {
                 <NavigationMenuTrigger>Coleta</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="w-96">
-                    <ListItem href="/coleta" title="Realizar solicitação de Coleta">
+                    <ListItem
+                      href="/coleta"
+                      title="Realizar solicitação de Coleta"
+                    >
                       Agende a coleta de materiais especiais ou volumosos
                       diretamente na sua residência ou empresa.
                     </ListItem>
-                    <ListItem href="/coleta/visualizar" title="Visualizar/Editar Coleta">
+                    <ListItem
+                      href="/coleta/visualizar"
+                      title="Visualizar/Editar Coleta"
+                    >
                       Gerencie suas solicitações ativas, visualize o histórico e
                       atualize informações das coletas agendadas.
                     </ListItem>
