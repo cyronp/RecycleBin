@@ -20,100 +20,76 @@ import {
 
 import { Folder } from "lucide-react";
 
-export default function Denuncia() {
+export default function Coleta() {
   return (
     <div className="mx-auto max-w-7xl space-y-8 p-6">
-      <form className="space-y-8" id="denuncia-form">
+      <form className="space-y-8" id="coleta-form">
         <div className="grid grid-cols-1">
           <div className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>Informações da Denuncia</CardTitle>
+                <CardTitle>Solicitação de Coleta</CardTitle>
                 <CardDescription>
-                  Reporte irregularidades no descarte de resíduos e lixo em seu
-                  bairro
+                  Solicite a coleta de resíduos recicláveis, volumosos ou
+                  especiais em seu endereço
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <Label htmlFor="denuncia">Motivo da denuncia</Label>
+                  <Label htmlFor="coleta">Tipo de coleta</Label>
                   <Select>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Selecione o tipo de denúncia" />
+                      <SelectValue placeholder="Selecione o tipo de coleta" />
                     </SelectTrigger>
                     <SelectContent position="popper">
                       <SelectGroup>
-                        <SelectLabel>Descarte Irregular de Lixo</SelectLabel>
-                        <SelectItem value="DESCARTE_IRREGULAR_TERRENO_BALDIO">
-                          Lixo jogado em terreno baldio
+                        <SelectLabel>Lixo Eletrônico</SelectLabel>
+                        <SelectItem value="ELETRONICO_COMPUTADOR_NOTEBOOK">
+                          Aparelhos eletronicos (celular, computador, etc)
                         </SelectItem>
-                        <SelectItem value="DESCARTE_IRREGULAR_RUA">
-                          Lixo abandonado em rua
+                        <SelectItem value="VOLUMOSO_ELETRODOMESTICO">
+                          Eletrodomésticos grandes (geladeira, fogão, etc)
                         </SelectItem>
-                        <SelectItem value="DESCARTE_IRREGULAR_RIO_VALA">
-                          Lixo jogado em rio ou vala
-                        </SelectItem>
-                        <SelectItem value="DESCARTE_IRREGULAR_SACOS_RASGADOS">
-                          Sacos de lixo rasgados espalhados na rua
+                        <SelectItem value="ELETRONICO_OUTROS">
+                          Outros eletrônicos
                         </SelectItem>
                       </SelectGroup>
                       <SelectGroup>
-                        <SelectLabel>
-                          Descarte Irregular de Resíduos Volumosos
-                        </SelectLabel>
-                        <SelectItem value="DESCARTE_VOLUMOSO_MOVEIS">
-                          Móveis abandonado em rua ou terreno
+                        <SelectLabel>Móveis e Objetos Volumosos</SelectLabel>
+                        <SelectItem value="VOLUMOSO_MOVEIS">
+                          Móveis (sofá, armário, cama, etc)
                         </SelectItem>
-                        <SelectItem value="DESCARTE_VOLUMOSO_ELETRODOMESTICO">
-                          Eletrodomestico abandonado em rua ou terreno
+                        <SelectItem value="VOLUMOSO_COLCHAO">
+                          Colchões
                         </SelectItem>
-                        <SelectItem value="DESCARTE_VOLUMOSO_OBSTRUCAO">
-                          Grandes objetos bloqueando passagem
+                        <SelectItem value="VOLUMOSO_OUTROS">
+                          Outros objetos grandes
                         </SelectItem>
                       </SelectGroup>
                       <SelectGroup>
-                        <SelectLabel>Descarte Irregular de Entulho</SelectLabel>
-                        <SelectItem value="ENTULHO_IRREGULAR_OBRA_TERRENO">
-                          Má conduta de restos de obra
+                        <SelectLabel>Entulho de Construção</SelectLabel>
+                        <SelectItem value="ENTULHO_REFORMA_PEQUENA">
+                          Entulho de pequena reforma
+                        </SelectItem>
+                        <SelectItem value="ENTULHO_REFORMA_MEDIA">
+                          Entulho de reforma média
+                        </SelectItem>
+                        <SelectItem value="ENTULHO_REFORMA_GRANDE">
+                          Entulho de reforma grande
                         </SelectItem>
                       </SelectGroup>
                       <SelectGroup>
-                        <SelectLabel>
-                          Descarte de Resíduos Perigosos
-                        </SelectLabel>
-                        <SelectItem value="RESIDUO_PERIGOSO_PILHAS_BATERIAS">
-                          Pilhas e baterias jogadas na rua
+                        <SelectLabel>Resíduos Especiais</SelectLabel>
+                        <SelectItem value="ESPECIAL_PILHAS_BATERIAS">
+                          Pilhas e baterias
                         </SelectItem>
-                        <SelectItem value="RESIDUO_PERIGOSO_LAMPADAS">
-                          Lâmpadas quebradas descartadas em local público
+                        <SelectItem value="ESPECIAL_LAMPADAS">
+                          Lâmpadas fluorescentes
                         </SelectItem>
-                        <SelectItem value="RESIDUO_PERIGOSO_QUIMICOS">
-                          Produtos químicos descartados incorretamente
+                        <SelectItem value="ESPECIAL_OLEO_COZINHA">
+                          Óleo de cozinha usado
                         </SelectItem>
-                        <SelectItem value="RESIDUO_PERIGOSO_OLEO">
-                          Óleo ou substâncias contaminantes jogadas no solo
-                        </SelectItem>
-                      </SelectGroup>
-                      <SelectGroup>
-                        <SelectLabel>Problemas Ambientais</SelectLabel>
-                        <SelectItem value="DANO_AMBIENTAL_QUEIMA">
-                          Queima de lixo
-                        </SelectItem>
-                        <SelectItem value="DANO_AMBIENTAL_POLUICAO_RIO">
-                          Poluição de rio ou córrego
-                        </SelectItem>
-                      </SelectGroup>
-                      <SelectGroup>
-                        <SelectLabel>Obstrução de Via Pública</SelectLabel>
-                        <SelectItem value="OBSTRUCAO_VIA_ENTULHO_CALCADA">
-                          Entulho bloqueando calçada
-                        </SelectItem>
-                        <SelectItem value="OBSTRUCAO_VIA_MOVEIS">
-                          Móveis impedindo passagem
-                        </SelectItem>
-                        <SelectItem value="OBSTRUCAO_VIA_LIXO_RUA">
-                          Lixo bloqueando rua
-                        </SelectItem>
+                        <SelectItem value="ESPECIAL_PNEUS">Pneus</SelectItem>
                       </SelectGroup>
                     </SelectContent>
                   </Select>
@@ -122,7 +98,7 @@ export default function Denuncia() {
                   <Label>Bairro</Label>
                   <Select>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Selecione o bairro da denuncia" />
+                      <SelectValue placeholder="Selecione o bairro da coleta" />
                     </SelectTrigger>
                     <SelectContent position="popper">
                       <SelectGroup>
@@ -213,7 +189,10 @@ export default function Denuncia() {
                   <Input placeholder="Rua Exemplo, 123"></Input>
                 </div>
                 <div className="space-y-2 mt-4">
-                  <Label>Foto da denuncia<span className="text-muted-foreground">(Limite 1)</span></Label>
+                  <Label>
+                    Foto dos materiais{" "}
+                    <span className="text-muted-foreground">(Limite 1)</span>
+                  </Label>
                   <label
                     htmlFor="photo"
                     className="rounded-lg border-2 border-dashed border-green-300 bg-green-50 p-12 text-center cursor-pointer block hover:bg-green-100 transition-colors"
@@ -222,7 +201,7 @@ export default function Denuncia() {
                       <Folder />
                     </div>
                     <p className="text-green-600">
-                      Insira a imagem de prova para denuncia
+                      Insira uma foto dos materiais para coleta
                     </p>
                     <Input
                       id="photo"
@@ -234,7 +213,7 @@ export default function Denuncia() {
                 </div>
                 <div className="pt-4">
                   <Button className="w-full" type="submit">
-                    Registrar Denuncia
+                    Solicitar Coleta
                   </Button>
                 </div>
               </CardContent>

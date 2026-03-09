@@ -73,11 +73,11 @@ export function Header() {
                 <NavigationMenuTrigger>Coleta</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="w-96">
-                    <ListItem href="/" title="Realizar solicitação de Coleta">
+                    <ListItem href="/coleta" title="Realizar solicitação de Coleta">
                       Agende a coleta de materiais especiais ou volumosos
                       diretamente na sua residência ou empresa.
                     </ListItem>
-                    <ListItem href="/" title="Visualizar/Editar Coleta">
+                    <ListItem href="/coleta/visualizar" title="Visualizar/Editar Coleta">
                       Gerencie suas solicitações ativas, visualize o histórico e
                       atualize informações das coletas agendadas.
                     </ListItem>
