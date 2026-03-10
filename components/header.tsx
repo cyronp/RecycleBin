@@ -35,22 +35,22 @@ export function Header() {
                 <NavigationMenuContent>
                   <ul className="w-96">
                     <ListItem
-                      href="/"
+                      href="/comum"
                       title="Coleta comum (Lixo orgânico / Rejeitos)"
                     >
                       Aprenda as melhores práticas para descarte de lixo
                       orgânico e rejeitos não recicláveis de forma adequada.
                     </ListItem>
-                    <ListItem href="/" title="Coleta seletiva (Recicláveis)">
-                      Entenda como separar e descartar materiais recicláveis
-                      (papel, plástico, vidro e metal) corretamente.
+                    <ListItem href="/seletiva" title="Coleta seletiva (Recicláveis)">
+                      Aprenda a separar e descartar materiais recicláveis
+                      (papel, plástico, vidro e metal) de forma adequada.
                     </ListItem>
                     <ListItem
-                      href="/"
+                      href="/agendada"
                       title="Coleta agendada (Resíduos volumosos)"
                     >
-                      Solicite a remoção de itens grandes como móveis,
-                      eletrodomésticos através da coleta agendada.
+                      Aprenda a solicitar a remoção de itens volumosos como
+                      móveis e eletrodomésticos de forma adequada.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -63,15 +63,15 @@ export function Header() {
                       href="/denuncia"
                       title="Realizar solicitação de Denuncia"
                     >
-                      Relate irregularidades ambientais como descarte inadequado
-                      de lixo, acúmulo de resíduos ou infrações.
+                      Aprenda a relatar irregularidades ambientais e descarte
+                      inadequado de resíduos de forma adequada.
                     </ListItem>
                     <ListItem
                       href="/denuncia/visualizar"
                       title="Visualizar/Editar Denuncia"
                     >
-                      Acompanhe o status das suas denúncias anteriores e faça
-                      atualizações quando necessário.
+                      Aprenda a acompanhar e gerenciar suas denúncias realizadas
+                      e fazer atualizações de forma adequada.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -84,15 +84,15 @@ export function Header() {
                       href="/coleta"
                       title="Realizar solicitação de Coleta"
                     >
-                      Agende a coleta de materiais especiais ou volumosos
-                      diretamente na sua residência ou empresa.
+                      Aprenda a agendar coletas de materiais especiais e
+                      volumosos na sua residência de forma adequada.
                     </ListItem>
                     <ListItem
                       href="/coleta/visualizar"
                       title="Visualizar/Editar Coleta"
                     >
-                      Gerencie suas solicitações ativas, visualize o histórico e
-                      atualize informações das coletas agendadas.
+                      Aprenda a gerenciar e acompanhar suas solicitações de
+                      coleta e fazer atualizações de forma adequada.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
