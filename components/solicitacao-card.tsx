@@ -1,5 +1,18 @@
 "use client";
 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogMedia,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { Trash2Icon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -69,15 +82,28 @@ export function SolicitacaoCard({
             <Pencil className="h-4 w-4" />
             Editar
           </Button>
-          <Button
-            variant="destructive"
-            className="w-full sm:w-auto cursor-pointer"
-            onClick={onCancelar}
-            size="default"
-          >
-            <Ban className="h-4 w-4" />
-            Cancelar
-          </Button>
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button variant="destructive"><Ban/>Cancelar</Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent size="sm">
+              <AlertDialogHeader>
+                <AlertDialogMedia className="bg-destructive/10 text-destructive dark:bg-destructive/20 dark:text-destructive">
+                  <Trash2Icon />
+                </AlertDialogMedia>
+                <AlertDialogTitle>Cancelar solicitação?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  Você tem certeza que deseja cancelar a solicitação realizada?
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel variant="outline" className="cursor-pointer">Voltar</AlertDialogCancel>
+                <AlertDialogAction variant="destructive" className="cursor-pointer">
+                  Cancelar
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </CardContent>
     </Card>
