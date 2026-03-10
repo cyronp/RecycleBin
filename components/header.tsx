@@ -27,7 +27,7 @@ export function Header() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/">Home</Link>
+                  <Link href="/">Inicio</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
