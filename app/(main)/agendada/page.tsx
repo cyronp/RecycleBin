@@ -1,12 +1,23 @@
 import { InstrucoesColeta } from "@/components/instrucoes-coleta";
+import Link from "next/link";
 
 export default function AgendadaPage() {
   const passos = [
     {
       numero: 1,
       titulo: "Agende a coleta",
-      descricao:
-        "Entre em contato com a prefeitura para agendar a coleta de resíduos volumosos.",
+      descricao: (
+        <>
+          Acesse a aba de{" "}
+          <Link
+            href="/coleta"
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            Realizar solicitação de coleta
+          </Link>{" "}
+          para agendar a coleta de resíduos volumosos.
+        </>
+      ),
       // imagemUrl: "/images/agendada-passo1.gif"
     },
     {

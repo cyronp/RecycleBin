@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { ReactNode } from "react";
 
 interface PassoInstrucao {
   numero: number;
   titulo: string;
-  descricao: string;
+  descricao: string | ReactNode;
   imagemUrl?: string;
 }
 

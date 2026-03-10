@@ -99,7 +99,7 @@ export function Header() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/">Pontos de Coleta</Link>
+                  <Link href="/pontos">Pontos de Coleta</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
