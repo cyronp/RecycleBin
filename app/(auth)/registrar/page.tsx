@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 import { Field, FieldLabel } from "@/components/ui/field";
 import { Button } from "@/components/ui/button";
@@ -8,6 +11,20 @@ import { Label } from "@/components/ui/label";
 import { Recycle, LogOut } from "lucide-react";
 
 export default function Login() {
+  const [senha, setSenha] = useState("");
+  const [confirmarSenha, setConfirmarSenha] = useState("");
+  const [erro, setErro] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (senha !== confirmarSenha) {
+      setErro("As senhas não coincidem");
+      return;
+    }
+    
+    setErro("");
+  };
   return (
     <div className="container relative min-h-svh flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       {/* Exit button */}
@@ -53,16 +70,31 @@ export default function Login() {
         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col space-y-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">
-              Acessar sua conta
+              Registrar sua conta
             </h1>
             <p className="text-sm text-muted-foreground">
-              Insira seu email e senha abaixo para acessar sua conta
+              Insira as suas informações para registrar sua conta
             </p>
           </div>
 
           <div className="grid gap-6">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="grid gap-4">
+                <div className="grid gap-2">
+                  <Field>
+                    <FieldLabel>Nome</FieldLabel>
+                    <Label className="sr-only" htmlFor="nome">
+                      Nome
+                    </Label>
+                  </Field>
+                  <Input
+                    id="nome"
+                    placeholder="Fulano da Silva"
+                    type="text"
+                    autoCapitalize="none"
+                    autoCorrect="off"
+                  />
+                </div>
                 <div className="grid gap-2">
                   <Field>
                     <FieldLabel>Email</FieldLabel>
@@ -81,6 +113,36 @@ export default function Login() {
                 </div>
                 <div className="grid gap-2">
                   <Field>
+                    <FieldLabel>CPF</FieldLabel>
+                    <Label className="sr-only" htmlFor="cpf">
+                      CPF
+                    </Label>
+                  </Field>
+                  <Input
+                    id="cpf"
+                    placeholder="123.456.789-12"
+                    type="text"
+                    autoCapitalize="none"
+                    autoCorrect="off"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Field>
+                    <FieldLabel>Telefone</FieldLabel>
+                    <Label className="sr-only" htmlFor="telefone">
+                      Telefone
+                    </Label>
+                  </Field>
+                  <Input
+                    id="telefone"
+                    placeholder="91234-5678"
+                    type="text"
+                    autoCapitalize="none"
+                    autoCorrect="off"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Field>
                     <FieldLabel>Senha</FieldLabel>
                     <Label className="sr-only" htmlFor="senha">
                       Senha
@@ -92,21 +154,32 @@ export default function Login() {
                     type="password"
                     autoCapitalize="none"
                   />
+                  <Field>
+                    <Label className="sr-only" htmlFor="senha">
+                      Senha
+                    </Label>
+                  </Field>
+                  <Input
+                    id="senha"
+                    placeholder="Confirmar sua senha"
+                    type="password"
+                    autoCapitalize="none"
+                  />
                 </div>
                 <Button type="submit" className="cursor-pointer">
-                  Entrar
+                  Registrar
                 </Button>
               </div>
             </form>
           </div>
 
           <p className="text-center text-sm text-muted-foreground">
-            Não possui uma conta?{" "}
+            Possui uma conta?{" "}
             <Link
-              href="/registrar"
+              href="/login"
               className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
             >
-              Cadastre-se
+              Acessar
             </Link>
           </p>
         </div>
