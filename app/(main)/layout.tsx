@@ -1,4 +1,5 @@
-import { Header } from "@/components/header";
+import { Header, AppSidebar } from "@/components/header";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 export default function MainLayout({
   children,
@@ -6,9 +7,12 @@ export default function MainLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <Header />
-      {children}
-    </>
+    <SidebarProvider>
+      <AppSidebar />
+      <main className="w-full">
+        <Header />
+        {children}
+      </main>
+    </SidebarProvider>
   );
 }
