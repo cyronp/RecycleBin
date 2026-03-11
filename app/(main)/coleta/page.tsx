@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 import { Folder } from "lucide-react";
 
@@ -187,6 +188,16 @@ export default function Coleta() {
                 <div className="space-y-2 mt-4">
                   <Label>Endereço</Label>
                   <Input placeholder="Rua Exemplo, 123"></Input>
+                </div>
+                <div className="space-y-2 mt-4">
+                  <Label htmlFor="observacao">
+                    Observação{" "}
+                    <span className="text-muted-foreground">(Opcional)</span>
+                  </Label>
+                  <Textarea
+                    id="observacao"
+                    placeholder="Adicione informações sobre quantidade, horário preferencial ou outras observações"
+                  />
                 </div>
                 <div className="space-y-2 mt-4">
                   <Label>

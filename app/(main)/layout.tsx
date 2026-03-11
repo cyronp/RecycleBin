@@ -1,4 +1,4 @@
-import { Header, AppSidebar } from "@/components/header";
+import { Header, AppSidebar, MobileSidebarTrigger } from "@/components/header";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
 export default function MainLayout({
@@ -12,6 +12,7 @@ export default function MainLayout({
       <main className="w-full">
         <Header />
         {children}
+        <MobileSidebarTrigger />
       </main>
     </SidebarProvider>
   );

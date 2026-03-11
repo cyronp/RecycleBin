@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 import { Folder } from "lucide-react";
 
@@ -213,7 +214,20 @@ export default function Denuncia() {
                   <Input placeholder="Rua Exemplo, 123"></Input>
                 </div>
                 <div className="space-y-2 mt-4">
-                  <Label>Foto da denuncia<span className="text-muted-foreground">(Limite 1)</span></Label>
+                  <Label htmlFor="observacao">
+                    Observação{" "}
+                    <span className="text-muted-foreground">(Opcional)</span>
+                  </Label>
+                  <Textarea
+                    id="observacao"
+                    placeholder="Adicione detalhes relevantes sobre a denúncia"
+                  />
+                </div>
+                <div className="space-y-2 mt-4">
+                  <Label>
+                    Foto da denuncia
+                    <span className="text-muted-foreground">(Limite 1)</span>
+                  </Label>
                   <label
                     htmlFor="photo"
                     className="rounded-lg border-2 border-dashed border-green-300 bg-green-50 p-12 text-center cursor-pointer block hover:bg-green-100 transition-colors"

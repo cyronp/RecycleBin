@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { Recycle, ChevronRight } from "lucide-react";
+import { Recycle, ChevronRight, Menu } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 import {
@@ -17,6 +17,7 @@ import { Button } from "./ui/button";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarHeader,
@@ -40,8 +41,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="flex h-16 w-full items-center justify-between px-4 md:px-14">
-        <div className="font-bold text-xl flex items-center gap-2">
-          {isMobile && <SidebarTrigger />}
+        <div
+          className={`font-bold text-xl flex items-center gap-2 ${isMobile ? "mx-auto" : ""}`}
+        >
           <Recycle className="h-6 w-6" />
           <span>RecycleBin</span>
         </div>
@@ -150,23 +152,17 @@ export function Header() {
 }
 
 export function AppSidebar() {
+  const isMobile = useIsMobile();
+
+  if (!isMobile) {
+    return null;
+  }
+
   return (
     <Sidebar>
       <SidebarHeader>
         <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <Link href="/">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <Recycle className="size-4" />
-                </div>
-                <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-semibold">RecycleBin</span>
-                  <span className="text-xs">Sistema de Coleta</span>
-                </div>
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
+          <SidebarMenuItem></SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
@@ -282,19 +278,34 @@ export function AppSidebar() {
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/login">
-                    <span>Login</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        <SidebarFooter>
+          <SidebarMenuButton asChild>
+            <Link href="/login">
+              <span>Login</span>
+            </Link>
+          </SidebarMenuButton>
+        </SidebarFooter>
       </SidebarContent>
     </Sidebar>
+  );
+}
+
+export function MobileSidebarTrigger() {
+  const isMobile = useIsMobile();
+
+  if (!isMobile) {
+    return null;
+  }
+
+  return (
+    <div className="fixed top-4 left-4 z-50">
+      <SidebarTrigger>
+        <Menu className="h-6 w-6" />
+      </SidebarTrigger>
+    </div>
   );
 }
 
