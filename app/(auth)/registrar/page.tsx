@@ -93,6 +93,7 @@ export default function Login() {
                     type="text"
                     autoCapitalize="none"
                     autoCorrect="off"
+                    required
                   />
                 </div>
                 <div className="grid gap-2">
@@ -109,6 +110,7 @@ export default function Login() {
                     autoCapitalize="none"
                     autoComplete="email"
                     autoCorrect="off"
+                    required
                   />
                 </div>
                 <div className="grid gap-2">
@@ -124,6 +126,7 @@ export default function Login() {
                     type="text"
                     autoCapitalize="none"
                     autoCorrect="off"
+                    required
                   />
                 </div>
                 <div className="grid gap-2">
@@ -139,6 +142,7 @@ export default function Login() {
                     type="text"
                     autoCapitalize="none"
                     autoCorrect="off"
+                    required
                   />
                 </div>
                 <div className="grid gap-2">
@@ -153,6 +157,7 @@ export default function Login() {
                     placeholder="Insira sua senha"
                     type="password"
                     autoCapitalize="none"
+                    required
                   />
                   <Field>
                     <Label className="sr-only" htmlFor="senha">
@@ -164,6 +169,7 @@ export default function Login() {
                     placeholder="Confirmar sua senha"
                     type="password"
                     autoCapitalize="none"
+                    required
                   />
                 </div>
                 <Button type="submit" className="cursor-pointer">

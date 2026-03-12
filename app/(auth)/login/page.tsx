@@ -77,6 +77,7 @@ export default function Login() {
                     autoCapitalize="none"
                     autoComplete="email"
                     autoCorrect="off"
+                    required
                   />
                 </div>
                 <div className="grid gap-2">
@@ -91,6 +92,7 @@ export default function Login() {
                     placeholder="Insira sua senha"
                     type="password"
                     autoCapitalize="none"
+                    required
                   />
                 </div>
                 <Button type="submit" className="cursor-pointer">
