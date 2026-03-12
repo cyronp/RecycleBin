@@ -89,12 +89,12 @@ export function InstrucoesColeta({
             return (
               <div
                 key={passo.numero}
-                className={`relative flex gap-5 p-5 rounded-xl border ${cores.borda} bg-card shadow-sm hover:shadow-md transition-all duration-200 group`}
+                className={`relative flex gap-5 p-5 rounded-xl border ${cores.borda} bg-card shadow-sm transition-all duration-200 group`}
               >
                 {/* Indicador do passo */}
                 <div className="shrink-0 z-10 flex flex-col items-center">
                   <div
-                    className={`w-12 h-12 rounded-full ${cores.numero} text-white flex items-center justify-center text-lg font-bold shadow-md group-hover:scale-110 transition-transform duration-200`}
+                    className={`w-12 h-12 rounded-full ${cores.numero} text-white flex items-center justify-center text-lg font-bold shadow-md`}
                   >
                     {Icone ? <Icone className="w-5 h-5" /> : passo.numero}
                   </div>
@@ -120,13 +120,6 @@ export function InstrucoesColeta({
                   <div className="text-muted-foreground leading-relaxed">
                     {passo.descricao}
                   </div>
-                </div>
-
-                {/* Check decorativo */}
-                <div className="shrink-0 hidden sm:flex items-center">
-                  <CheckCircle2
-                    className={`w-5 h-5 ${cores.icone} opacity-30 group-hover:opacity-100 transition-opacity duration-200`}
-                  />
                 </div>
               </div>
             );
