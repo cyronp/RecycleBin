@@ -187,7 +187,7 @@ export default function Coleta() {
                 </div>
                 <div className="space-y-2 mt-4">
                   <Label>Endereço</Label>
-                  <Input placeholder="Rua Exemplo, 123"></Input>
+                  <Input placeholder="Rua Exemplo, 123" required></Input>
                 </div>
                 <div className="space-y-2 mt-4">
                   <Label htmlFor="observacao">
@@ -219,6 +219,7 @@ export default function Coleta() {
                       type="file"
                       accept="image/*"
                       className="hidden"
+                      required
                     />
                   </label>
                 </div>
